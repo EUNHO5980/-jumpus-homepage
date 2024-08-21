@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jumpus</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+    .background-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -10;
+      transition: opacity 0.5s;
+    }
+    .background {
+      width: 100%;
+      height: 100%;
+      background: url("https://images.unsplash.com/photo-1584333640509-4c1d3e206781?q=80&w=4000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat center 30%;
+      background-size: cover;
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+    .content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+      font-size: 2em;
+    }
+    .highlight {
+      color: #F39800;
+    }
+    .message {
+      font-size: 0.7em;
+      margin-top: 150px;
+      font-weight: normal;
+    }
+    .scroll-indicator {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      color: white;
+      text-align: center;
+      font-size: 0.8em;
+    }
+    .arrow {
+      display: block;
+      margin: 5px auto;
+      width: 24px;
+      height: 24px;
+      border-right: 2px solid white;
+      border-bottom: 2px solid white;
+      transform: rotate(45deg);
+      animation: moveArrow 1.5s infinite;
+    }
+    @keyframes moveArrow {
+      0% { transform: translateY(0) rotate(45deg); }
+      50% { transform: translateY(10px) rotate(45deg); }
+      100% { transform: translateY(0) rotate(45deg); }
+    }
+    .notion-frame {
+      background-color: transparent !important;
+      position: relative;
+      z-index: 1;
+    }
+    .cta {
+      position: fixed;
+      bottom: 16px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      display: flex;
+      align-self: center;
+      align-items: center;
+      justify-content: center;
+      width: 88%;
+      max-width: 708px;
+      height: 48px;
+      background-color: #F39800;
+      color: #FFFFFF;
+      z-index: 999999999;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 16px;
+      transition: 300ms;
+      -webkit-box-shadow: 0px 0px 4px 2px rgba(55, 53, 47, 0.4);
+      -moz-box-shadow: 0px 0px 4px 2px rgba(55, 53, 47, 0.4);
+      box-shadow: 0px 0px 4px 2px rgba(55, 53, 47, 0.4);
+      font-family: 'inter', sans-serif;
+      cursor: pointer;
+    }
+    .cta:hover {
+      filter: brightness(88%);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .content {
+        font-size: 1.0em;
+        top: 45%;
+      }
+      .message {
+        font-size: 0.6em;
+        margin-top: 100px;
+      }
+      .scroll-indicator {
+        font-size: 0.7em;
+      }
+      .cta {
+        width: 90%;
+        font-size: 14px;
+        height: 40px;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .content {
+        font-size: 0.9em;
+        top: 55%;
+      }
+      .message {
+        font-size: 0.9em;
+        margin-top: 80px;
+      }
+      .scroll-indicator {
+        font-size: 0.6em;
+      }
+      .cta {
+        width: 55%;
+        font-size: 13px;
+        height: 36px;
+      }
+    }
+  </style>
+  <script>
+    function handleClick() {
+      window.location.href = "https://jumpus.oopy.io/11920a48-10e4-4b38-a02f-479089a5f763";
+    }
+    window.addEventListener('scroll', function() {
+      var backgroundContainer = document.getElementById('background-container');
+      if (window.scrollY > 200) {
+        backgroundContainer.style.opacity = '0';
+      } else {
+        backgroundContainer.style.opacity = '1';
+      }
+    });
+  </script>
+</head>
+<body>
+  <div class="background-container" id="background-container">
+    <div class="background"></div>
+    <div class="overlay"></div>
+    <div class="content">
+      <h1>새로운 방식의 <br> "<span class="highlight">디지털 줄넘기</span>" 교육 서비스</h1>
+      <p class="message">줄넘기 교육에 필요한 토탈 솔루션을 제공하여 학원 운영의 효율을 높여 드립니다.</p>
+    </div>
+    <div class="scroll-indicator">
+      jumpus 자세히 보기
+      <span class="arrow"></span>
+    </div>
+  </div>
+  <div class="notion-frame"></div>
+  <div class="cta" onclick='handleClick()'>JUMPUS 문의하기</div>
+</body>
+</html>
